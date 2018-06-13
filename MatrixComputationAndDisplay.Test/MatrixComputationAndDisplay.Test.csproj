@@ -45,6 +45,8 @@
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +62,9 @@
     <None Include="bin\Debug\test.prn" />
     <None Include="bin\Debug\test1.prn" />
     <None Include="bin\Debug\testwholenumbers.prn" />
+    <None Include="invalidtest.prn" />
     <None Include="packages.config" />
+    <None Include="test1.prn" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MatrixComputationAndDisplay\MatrixComputationAndDisplay.csproj">

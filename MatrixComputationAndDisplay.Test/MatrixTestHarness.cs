@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MatrixComputationAndDisplay;
+using System.Configuration;
 using System.IO;
 
 
@@ -19,7 +19,7 @@ namespace MatrixComputationAndDisplay.Test
         
         public MatrixTestHarness()
         {
-            matrixPopulator.FilePath = @"test1.prn";
+            matrixPopulator.FilePath = ConfigurationManager.AppSettings["FilePath"];
         }
 
         /// <summary>
@@ -108,7 +108,8 @@ namespace MatrixComputationAndDisplay.Test
         [ExpectedException(typeof(FormatException))]
         public void Should_ThrowException_When_ForInvalidCharactersInFile()
         {
-            matrixPopulator.FilePath = @"invalidtest.prn";
+
+            matrixPopulator.FilePath = ConfigurationManager.AppSettings["InValidFilePath"];
             FileDataProvider fileDataProvider = new FileDataProvider();
             var numbers = fileDataProvider.GetNumbers(matrixPopulator.FilePath);
             Assert.Fail("An exception is thrown for invalid characters found in the test.prm file.");
